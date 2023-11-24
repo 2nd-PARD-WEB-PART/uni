@@ -31,9 +31,25 @@ function App() {
     sin: 0, //홍신
   });
   
+  const [PhdInfo, setPhdInfo] =useState({
+    major: '',
+    lab: '',
+    call: '',
+    email: '',
+  });
+
+  const [Subject, setSubject] = useState({
+    subject1: '',
+    subject2: '',
+    subject3: '',
+    subject4: '',
+    subject5: '',
+    subject6: '',
+  })
+  
   return (
     <div>
-      <MyContext.Provider value={{MyData,setUser}}>
+      <MyContext.Provider value={{MyData,setUser,PhdInfo,setPhdInfo,Subject,setSubject}}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainPage />} />

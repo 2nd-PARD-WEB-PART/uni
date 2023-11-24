@@ -55,6 +55,11 @@ const Question_dtail = styled.div`
   font-weight: 600;
   line-height: 100%;
 `;
+const Question_text = styled.div`
+  width:260px;
+  height: auto;
+  background-color: aqua;
+`;
 
 const Footer = styled.footer`
   width: 435px;
@@ -86,7 +91,6 @@ const AnswerA_detail = styled.button`
   flex-direction: column;
   width: 380px;
   height: 48px;
-  text-decoration: none;
   &:hover {
     cursor: pointer; /* 마우스가 요소 위에 있을 때 pointer 스타일 변경 */
     background-color: #f0f0f0; /* 마우스가 요소 위에 있을 때 배경색 변경 */
@@ -177,14 +181,14 @@ export default function Select() {
               <p>눈을 떠보니 9시 57분이다. </p>
               <p>나는 수업을 갈 것인가? </p>
             </div>
-            
           </Question_dtail>
         </Question>
+
         <Footer>
           <Answer_Container>
 
             <AnswerA>
-              <Link to='/Select2'>
+              <Link to='/Select2' style={{textDecoration: "none"}}>
                 <AnswerA_detail onClick={handleAnswerAClick}>
                   <div>
                     <TextA>
@@ -196,7 +200,7 @@ export default function Select() {
             </AnswerA>
 
             <AnswerB>
-              <Link to='/Select2'>
+              <Link to='/Select2' style={{textDecoration: "none"}}>
                 <AnswerB_detail onClick={handleAnswerBClick}>
                 <div>
                   <TextB>

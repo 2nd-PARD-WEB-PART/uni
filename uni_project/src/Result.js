@@ -2,6 +2,8 @@ import styled from "styled-components";
 import "./fonts/font.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useContext } from "react";
+import { MyContext } from "./App";
 
 const ScreenContainer = styled.div`
   box-sizing: border-box;
@@ -158,15 +160,25 @@ const CommentContainer = styled.div`
   border-radius: 4px;
   border: 1px solid #b3b3b3;
   background: var(--White, #fff);
+  color: #010101;
+
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "NanumMyeongjo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
 `;
 
 const TextOnBorder = styled.span`
-  position: absolute;
-  top: -20px; /* 텍스트의 위치를 조정할 수 있습니다. */
-  left: 50%; /* 텍스트의 가로 위치를 가운데로 조정합니다. */
-  transform: translateX(
-    -50%
-  ); /* 가로 위치를 조정한 위치의 50%만큼 왼쪽으로 이동합니다. */
+  color: #010101;
+
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "NanumMyeongjo";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 114.286% */
   background-color: white; /* 텍스트 배경색을 조정할 수 있습니다. */
   padding: 0 5px; /* 텍스트 주변의 여백을 조정할 수 있습니다. */
 `;
@@ -176,7 +188,15 @@ function Result() {
   const [content, setContent] = useState("");
   const [selectedProf, setSelectedProf] = useState("");
   const [ismore, setIsMore] = useState(false);
-  let comments = [];
+  const [comments, setComments] = useState([]);
+  const { MyData, setUser } = useContext(MyContext);
+  const maxScoreName = Object.keys(MyData).reduce((a, b) =>
+    MyData[a] > MyData[b] ? a : b
+  );
+
+  const changeIsMore = (e) => {
+    setIsMore(!ismore);
+  };
 
   const changeWriter = (e) => {
     setWriter(e.target.value);
@@ -194,13 +214,13 @@ function Result() {
     //비동기식 함수를 사용해야함
     async function getData() {
       try {
-        axios
-          .get("http://172.18.157.205:8080/api/comments")
+        await axios
+          .get(`http://172.18.157.205:8080/api/comments/${maxScoreName}`)
           .then((response) => {
             //서버측 데이터 보면 실제 데이터는 response.data.data에 저장되어 있음.
             console.log("response: ", response.data);
             //데이터 업데이트.
-            comments = response.data;
+            setComments(response.data);
           });
       } catch (error) {
         console.log("error: " + error);
@@ -231,12 +251,12 @@ function Result() {
     async function getData() {
       try {
         axios
-          .get("http://172.18.157.205:8080/api/comments")
+          .get(`http://172.18.157.205:8080/api/comments/${maxScoreName}`)
           .then((response) => {
             //서버측 데이터 보면 실제 데이터는 response.data.data에 저장되어 있음.
             console.log("response: ", response.data);
             //데이터 업데이트.
-            comments = response.data;
+            setComments(response.data);
           });
       } catch (error) {
         console.log("error: " + error);
@@ -259,10 +279,12 @@ function Result() {
       <ProfComment>
         <ProfCommentTitle>
           우리 교수님은요...
-          <CommentContainer>
-            dkdkdkdkdkdk
-            <TextOnBorder></TextOnBorder>
-          </CommentContainer>
+          {comments.map((iter) => (
+            <div>
+              <TextOnBorder>{iter.writer}</TextOnBorder>
+              <CommentContainer>{iter.content}</CommentContainer>
+            </div>
+          ))}
         </ProfCommentTitle>
       </ProfComment>
       <CommentOtherProf>
