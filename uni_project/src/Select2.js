@@ -8,12 +8,6 @@ const Container =styled.div`
   justify-content: center;
   flex-direction: row;
   text-align: center;
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Balsamiq Sans;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
   background-image: url('/Rectangle 12.png');
   background-size: cover;
 `;
@@ -25,7 +19,7 @@ const Body = styled.div`
   background-color: beige;
   width: 435px;
   height: 100vh;
-  background-image: url('/image 1.png');
+  background-image: url('/image 3.png');
   background-size: cover;
 `;
 
@@ -47,6 +41,13 @@ const Question_dtail = styled.div`
   justify-content: center;
   flex-direction: column;
   background-color: #FFFFFFAB;
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: "NanumMyeongjo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27.84px;
 `;
 
 const Footer = styled.footer`
@@ -87,6 +88,13 @@ const AnswerA_detail = styled.button`
 `;
 const TextA = styled.div`
   padding-left: 16px;
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: "NanumMyeongjo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27.84px;
 `
 
 const AnswerB = styled.div`
@@ -112,6 +120,13 @@ const AnswerB_detail = styled.button`
 `;
 const TextB = styled.div`
   padding-left: 16px;
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: "NanumMyeongjo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27.84px;
   
 `
 
