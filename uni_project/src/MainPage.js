@@ -147,14 +147,15 @@ function MainPage() {
   const [count, setCount] =useState(0);
 
   useEffect(() => {
+    console.log("gld;")
     //GET 요청 보내기
     axios
-      .get(`http://3.35.236.83/pard/search`)
+      .get(`http://172.18.157.205:8080/api/rankings/count`)
       .then((response) => {
-        console.log("response: " + JSON.stringify(response.data.data));
+        console.log("response: " + JSON.stringify(response.data));
 
         //서버에서 받은 데이터 추출
-        const suverName = response.data.data.count;
+        const suverName = response.data
         setCount(suverName);
       })
       .catch((error) => console.log("error: " + error));
