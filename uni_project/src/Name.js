@@ -137,6 +137,8 @@ function Name() {
     console.log(inputValue)
   };
 
+  const isInputEmpty = inputValue.trim() === "";
+
   return (
     <MainDiv>
       <BgImg></BgImg>
@@ -156,7 +158,7 @@ function Name() {
             </InputDiv>
       </ImgDiv1>
       <footer>
-            <StartButton type="button" onClick={handleSubmit}>
+            <StartButton type="button" onClick={handleSubmit} disabled={isInputEmpty}>
               입력완료
             </StartButton>
         </footer>

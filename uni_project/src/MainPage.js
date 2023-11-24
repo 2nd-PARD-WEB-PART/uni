@@ -46,7 +46,7 @@ const ImgDiv1=styled(MainDiv)`
   background-position: center;
   width: 435px;
   height: 100%;
-  justify-content: end;
+  justify-content: space-between;
 `;
 
 const OpacityDiv = styled.div`
@@ -58,6 +58,25 @@ const OpacityDiv = styled.div`
   //margin-top: 450px;
   align-items: center; // 세로 방향 가운데 정렬 
   justify-content: center; // 가로 방향 가운데 정렬 
+`;
+
+const Opa2 =styled(OpacityDiv)`
+  width: 340px;
+  height: 160px;
+  justify-content: center;
+  align-items: center;
+  gap: 11.6px;
+  flex-shrink: 0;
+  margin-top: 38px;
+  margin-left: 20px;
+
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'NanumMyeongjoOTF';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
 `;
 
 const Title =styled.div`
@@ -129,6 +148,9 @@ function MainPage() {
       <BgImg2></BgImg2>
       <BgImg3></BgImg3>
       <ImgDiv1>
+        <Opa2>
+          “당신의 최애의 교수가 되어줄게!”
+        </Opa2>
         <OpacityDiv>
           <Title>
             <TitleCover src="Rectangle 3.png" alt="타이틀 대괄호 왼쪽"/>
