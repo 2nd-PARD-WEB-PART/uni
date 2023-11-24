@@ -10,17 +10,49 @@ const MainDiv =styled.div`
   justify-content: center;
 `;
 
-const MainDiv2=styled(MainDiv)`
-  gap: 100px;
+const ImgDiv1=styled(MainDiv)`
+  display: flex;
+  flex-direction: column;
+  background-image:url("./image 1.png");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 375px;
+  height: 568px;
+`;
+
+const OpacityDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  height : 250px;
+  width: 100%;
+  background-color: #FFFFFFAB;
+  margin-top: 320px;
+  align-items: center; // 세로 방향 가운데 정렬 
+  justify-content: center; // 가로 방향 가운데 정렬 
+`;
+
+const TitleDiv =styled.div`
+  display: flex;
+  text-align: center;
+  color: #000;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: NanumMyeongjoOTF;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 39.869px;
 `;
 
 const TextDiv =styled.div`
-  display: flex;
-  align-items: center; // 세로 방향 가운데 정렬 
-  justify-content: center; // 가로 방향 가운데 정렬 
-  text-align: center;
-  width: 200px;
-  height: 200px;
+  color: #000;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: NanumMyeongjoOTF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 82px;
 `;
 
 const StartLink = styled(Link)`
@@ -28,35 +60,45 @@ const StartLink = styled(Link)`
 `;
 
 const StartButton =styled.button`
-  display: flex;
-  flex-direction: row;
-  background-color: #3498db; // 원하는 배경색으로 변경 
-  color: #fff; //원하는 텍스트 색상으로 변경
+  background-color: white; // 원하는 배경색으로 변경 
+  color: black; //원하는 텍스트 색상으로 변경
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 328px;
+  height: 48px;
+  margin-top: 13px;
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: NanumMyeongjoOTF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 
   &:hover {
-    background-color: #2980b9; //마우스 호버 시 배경색 변경
+    background-color: lightgray; //마우스 호버 시 배경색 변경
   }
 `;
 
 function MainPage() {
   return (
     <MainDiv>
-      <MainDiv2>
-        <TextDiv>
-          최애의 교수
-        </TextDiv>
-        <input type="text" placeholder="이름을 입력하세요">
-          
-        </input>
-        <StartLink to={"/select"}>
-          <StartButton>
-            시작!
-          </StartButton>
-        </StartLink>
-      </MainDiv2>
+      <ImgDiv1>
+        <OpacityDiv>
+          <TitleDiv>
+            최애의 교수
+          </TitleDiv>
+          <TextDiv>
+            지금까지 총 000,000명이 참여했습니다. 
+          </TextDiv>
+          <StartLink to={"/select"}>
+            <StartButton>
+              시작하기
+            </StartButton>
+          </StartLink>
+        </OpacityDiv>
+      </ImgDiv1>
     </MainDiv>
   );
 }
