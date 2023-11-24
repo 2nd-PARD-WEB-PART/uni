@@ -126,7 +126,7 @@ export default function Select() {
         updatedData.jc += 1;
         updatedData.yong += 1;
         updatedData.jang += 1;
-        updatedData.sin += 1;
+        updatedData.shin += 1;
         updatedData.jung += 1;
     
         setUser(updatedData);

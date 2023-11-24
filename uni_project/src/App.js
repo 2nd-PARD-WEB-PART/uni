@@ -28,7 +28,7 @@ function App() {
     ho: 0, //김호준
     go: 0, //고윤민
     jc: 0, //남재창
-
+    sin: 0, //홍신
   });
   
   return (
