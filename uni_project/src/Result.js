@@ -257,13 +257,14 @@ function Result() {
         </ResultContainer>
       </ResultPart>
       <ProfComment>
-        <ProfCommentTitle>
+				{ismore ?  : <ProfCommentTitle>
           우리 교수님은요...
           <CommentContainer>
             dkdkdkdkdkdk
             <TextOnBorder></TextOnBorder>
           </CommentContainer>
-        </ProfCommentTitle>
+        </ProfCommentTitle>}
+        
       </ProfComment>
       <CommentOtherProf>
         <ProfCommentTitle>전체 순위</ProfCommentTitle>
