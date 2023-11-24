@@ -1,5 +1,5 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React , {useState} from "react";
+import {Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import "./Fonts/Font.css";
 
@@ -122,6 +122,21 @@ const StartButton =styled.button`
 `;
 
 function Name() {
+  const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value); 
+    console.log(e.target.value)
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // 폼 제출 기본 동작 방지
+    localStorage.setItem("name", inputValue);
+    navigate("/result");
+    console.log(inputValue)
+  };
+
   return (
     <MainDiv>
       <BgImg></BgImg>
@@ -135,18 +150,17 @@ function Name() {
           </Title>
           <InputDiv>
             <TitleCover src="Rectangle 3.png" alt="타이틀 대괄호 왼쪽"/>
-            <InputName type="text" placeholder="__________">
+            <InputName type="text" onChange={handleChange} placeholder="__________">
             </InputName>
             <TitleCover src="Rectangle 2.png" alt="타이틀 대괄호 왼쪽"/>
             </InputDiv>
       </ImgDiv1>
       <footer>
-          <StartLink to={"/result"}>
-            <StartButton>
+            <StartButton type="button" onClick={handleSubmit}>
               입력완료
             </StartButton>
-          </StartLink>
-          </footer>
+        </footer>
+      
     </MainDiv>
   );
 }

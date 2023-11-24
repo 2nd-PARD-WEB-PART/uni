@@ -44,7 +44,7 @@ const ImgDiv1=styled(MainDiv)`
   background-repeat:no-repeat;
   background-size: cover;
   background-position: center;
-  width: 375px;
+  width: 435px;
   height: 100%;
   justify-content: end;
 `;
