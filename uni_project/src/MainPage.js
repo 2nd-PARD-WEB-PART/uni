@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import "./Fonts/Font.css";
+import axios from "axios";
 
 const MainDiv =styled.div`
   display: flex;
@@ -142,6 +143,23 @@ const StartButton =styled.button`
 `;
 
 function MainPage() {
+
+  const [count, setCount] =useState(0);
+
+  useEffect(() => {
+    //GET 요청 보내기
+    axios
+      .get(`http://3.35.236.83/pard/search`)
+      .then((response) => {
+        console.log("response: " + JSON.stringify(response.data.data));
+
+        //서버에서 받은 데이터 추출
+        const suverName = response.data.data.count;
+        setCount(suverName);
+      })
+      .catch((error) => console.log("error: " + error));
+  }, []);
+
   return (
     <MainDiv>
       <BgImg></BgImg>
@@ -160,7 +178,7 @@ function MainPage() {
             <TitleCover src="Rectangle 2.png" alt="타이틀 대괄호 오른쪽"/>
           </Title>
           <TextDiv>
-            지금까지 총 000,000명이 참여했습니다. 
+            지금까지 총 {count}명이 참여했습니다. 
           </TextDiv>
           <StartLink to={"/name"}>
             <StartButton>
