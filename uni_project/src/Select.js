@@ -8,12 +8,6 @@ const Container =styled.div`
   justify-content: center;
   flex-direction: row;
   text-align: center;
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Balsamiq Sans;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
   background-image: url('/Rectangle 12.png');
   background-size: cover;
 `;
