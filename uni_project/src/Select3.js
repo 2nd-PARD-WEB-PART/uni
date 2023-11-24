@@ -79,7 +79,6 @@ const AnswerA_detail = styled.button`
   flex-direction: column;
   width: 380px;
   height: 48px;
-  text-decoration: none;
   &:hover {
     cursor: pointer; /* 마우스가 요소 위에 있을 때 pointer 스타일 변경 */
     background-color: #f0f0f0; /* 마우스가 요소 위에 있을 때 배경색 변경 */
@@ -104,7 +103,6 @@ const AnswerB_detail = styled.button`
   flex-direction: column;
   width: 380px;
   height: 48px;
-  text-decoration: none;
   &:hover {
     cursor: pointer; /* 마우스가 요소 위에 있을 때 pointer 스타일 변경 */
     background-color: #f0f0f0; /* 마우스가 요소 위에 있을 때 배경색 변경 */
@@ -116,35 +114,36 @@ const TextB = styled.div`
 `
 
 export default function Select() {
-  const {MyData, setUser} = useContext(MyContext);
+    const {MyData, setUser} = useContext(MyContext);
 
-  const handleAnswerAClick = () => {
-    // MyData를 복제해서 새로운 객체를 만듬
-    const updatedData = { ...MyData };
-
-    updatedData.Hwang += 1;
-    updatedData.yong += 1;
-    updatedData.hong += 1;
-    updatedData.seob += 1;
-    updatedData.jung += 1;
-
-    setUser(updatedData);
-  };
-
-  const handleAnswerBClick = () => {
-    // MyData를 복제해서 새로운 객체를 만듬
-    const updatedData = { ...MyData };
-
-    updatedData.gwang += 1;
-    updatedData.go += 1;
-    updatedData.seok += 1;
-    updatedData.ho += 1;
-    updatedData.jc += 1;
-    updatedData.jang += 1;
-    updatedData.sin += 1;
-
-    setUser(updatedData);
-  };
+    const handleAnswerAClick = () => {
+        // MyData를 복제해서 새로운 객체를 만듬
+        const updatedData = { ...MyData };
+    
+        updatedData.Hwang += 1;
+        updatedData.gwang += 1;
+        updatedData.go += 1;
+        updatedData.jc += 1;
+        updatedData.yong += 1;
+        updatedData.jang += 1;
+        updatedData.sin += 1;
+        updatedData.hong += 1;
+        updatedData.seob += 1;
+    
+        setUser(updatedData);
+      };
+    
+      const handleAnswerBClick = () => {
+        // MyData를 복제해서 새로운 객체를 만듬
+        const updatedData = { ...MyData };
+    
+        updatedData.seok += 1;
+        updatedData.ho += 1;
+        updatedData.sin += 1;
+        updatedData.jung += 1;
+    
+        setUser(updatedData);
+      };
 
   return(
     <Container>
@@ -153,9 +152,8 @@ export default function Select() {
         <Question>
           <Question_dtail>
             <div>
-              <p>2교시 수업인 나, </p>
-              <p>눈을 떠보니 9시 57분이다. </p>
-              <p>나는 수업을 갈 것인가? </p>
+              <p>수업 선택 시 가장 </p>
+              <p>중요하게 생각하는 것은? </p>
             </div>
             
           </Question_dtail>
@@ -164,11 +162,11 @@ export default function Select() {
           <Answer_Container>
 
             <AnswerA>
-              <Link to='/Select2'>
+              <Link to='/Select4'>
                 <AnswerA_detail onClick={handleAnswerAClick}>
                   <div>
                     <TextA>
-                      출석 점수가 없으니 그냥 재껴~!
+                    과제는 많지만 시험은 쉬운 교수님
                     </TextA>
                   </div>
                 </AnswerA_detail>
@@ -176,12 +174,11 @@ export default function Select() {
             </AnswerA>
 
             <AnswerB>
-              <Link to='/Select2'>
+              <Link to='/Select4'>
                 <AnswerB_detail onClick={handleAnswerBClick}>
                 <div>
                   <TextB>
-                    <div>출석 점수가 3점이다.</div>
-                    <div>안가면 바로 재이수 각. 당장 달려간다.</div>
+                    <div>과제는 적지만 시험은 어려운 교수님</div>
                   </TextB>
                 </div>
               </AnswerB_detail>
