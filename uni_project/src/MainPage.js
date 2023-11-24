@@ -11,7 +11,7 @@ const MainDiv =styled.div`
 `;
 
 const MainDiv2=styled(MainDiv)`
-  gap: 296px;
+  gap: 100px;
 `;
 
 const TextDiv =styled.div`
@@ -48,6 +48,9 @@ function MainPage() {
         <TextDiv>
           최애의 교수
         </TextDiv>
+        <input type="text" placeholder="이름을 입력하세요">
+          
+        </input>
         <StartLink to={"/select"}>
           <StartButton>
             시작!
