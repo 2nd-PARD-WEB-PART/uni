@@ -1,8 +1,6 @@
 import React , {useState} from "react";
 import {Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import "./Fonts/Font.css";
-
 const MainDiv =styled.div`
   display: flex;
   flex-direction: column;
@@ -129,7 +127,7 @@ function Name() {
   const handleSubmit = (e) => {
     e.preventDefault(); // 폼 제출 기본 동작 방지
     localStorage.setItem("name", inputValue);
-    navigate("/result");
+    navigate("/select");
     console.log(inputValue)
   };
 
