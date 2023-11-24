@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
+import "./Fonts/Font.css";
 
 const MainDiv =styled.div`
   display: flex;
@@ -10,6 +11,32 @@ const MainDiv =styled.div`
   justify-content: center;
 `;
 
+const BgImg =styled.div`
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background-image:url("./flower.png");
+  background-repeat:no-repeat;
+  background-size: contain;
+  top: 20%;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.8;
+  filter: blur(10px);
+`;
+
+const BgImg2 =styled(BgImg)`
+  background-image:url("./green.png");
+  top: 0;
+  left: 60%;
+`
+
+const BgImg3 =styled(BgImg)`
+  background-image:url("./heart.png");
+  top: 60%;
+  left: 55%;
+`
+
 const ImgDiv1=styled(MainDiv)`
   display: flex;
   flex-direction: column;
@@ -18,7 +45,7 @@ const ImgDiv1=styled(MainDiv)`
   background-size: cover;
   background-position: center;
   width: 375px;
-  height: 568px;
+  height: 700px;
 `;
 
 const OpacityDiv = styled.div`
@@ -27,9 +54,22 @@ const OpacityDiv = styled.div`
   height : 250px;
   width: 100%;
   background-color: #FFFFFFAB;
-  margin-top: 320px;
+  margin-top: 450px;
   align-items: center; // 세로 방향 가운데 정렬 
   justify-content: center; // 가로 방향 가운데 정렬 
+`;
+
+const Title =styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+`;
+
+const TitleCover =styled.img`
+  display: flex;
+  width: 5px;
+  height: 24px;
 `;
 
 const TitleDiv =styled.div`
@@ -37,7 +77,7 @@ const TitleDiv =styled.div`
   text-align: center;
   color: #000;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: NanumMyeongjoOTF;
+  font-family: 'NanumMyeongjoOTF';
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -47,7 +87,7 @@ const TitleDiv =styled.div`
 const TextDiv =styled.div`
   color: #000;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: NanumMyeongjoOTF;
+  font-family: 'NanumMyeongjoOTF';
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -84,11 +124,18 @@ const StartButton =styled.button`
 function MainPage() {
   return (
     <MainDiv>
+      <BgImg></BgImg>
+      <BgImg2></BgImg2>
+      <BgImg3></BgImg3>
       <ImgDiv1>
         <OpacityDiv>
-          <TitleDiv>
-            최애의 교수
-          </TitleDiv>
+          <Title>
+            <TitleCover src="Rectangle 3.png" alt="타이틀 대괄호 왼쪽"/>
+            <TitleDiv>
+              최애의 교수
+            </TitleDiv>
+            <TitleCover src="Rectangle 2.png" alt="타이틀 대괄호 오른쪽"/>
+          </Title>
           <TextDiv>
             지금까지 총 000,000명이 참여했습니다. 
           </TextDiv>
