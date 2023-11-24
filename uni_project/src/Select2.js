@@ -139,7 +139,7 @@ export default function Select() {
     
         updatedData.seok += 1;
         updatedData.go += 1;
-        updatedData.sin += 1;
+        updatedData.shin += 1;
         updatedData.hong += 1;
         updatedData.jung += 1;
     

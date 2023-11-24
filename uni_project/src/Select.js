@@ -141,7 +141,7 @@ export default function Select() {
     updatedData.ho += 1;
     updatedData.jc += 1;
     updatedData.jang += 1;
-    updatedData.sin += 1;
+    updatedData.shin += 1;
 
     setUser(updatedData);
   };

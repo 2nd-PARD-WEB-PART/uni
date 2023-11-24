@@ -124,7 +124,7 @@ export default function Select() {
         updatedData.go += 1;
         updatedData.ho += 1;
         updatedData.yong += 1;
-        updatedData.sin += 1;
+        updatedData.shin += 1;
         updatedData.hong += 1;
         updatedData.seob += 1;
     
