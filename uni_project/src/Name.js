@@ -67,7 +67,7 @@ const TitleDiv =styled.div`
   text-align: center;
   color: #000;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: 'NanumMyeongjoOTF';
+    font-family: 'NanumMyeongjo';
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -88,7 +88,7 @@ const InputName =styled.input`
     width: 121px;
 
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: 'NanumMyeongjoOTF';
+    font-family: 'NanumMyeongjo';
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -109,7 +109,7 @@ const StartButton =styled.button`
   height: 48px;
 
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: NanumMyeongjoOTF;
+  font-family: 'NanumMyeongjo';
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

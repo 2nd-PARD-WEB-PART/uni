@@ -72,7 +72,7 @@ const Opa2 =styled(OpacityDiv)`
 
   text-align: center;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'NanumMyeongjoOTF';
+  font-family: 'NanumMyeongjo';
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -97,7 +97,7 @@ const TitleDiv =styled.div`
   text-align: center;
   color: #000;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'NanumMyeongjoOTF';
+  font-family: 'NanumMyeongjo';
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -107,7 +107,7 @@ const TitleDiv =styled.div`
 const TextDiv =styled.div`
   color: #000;
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'NanumMyeongjoOTF';
+  font-family: 'NanumMyeongjo';
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -130,7 +130,7 @@ const StartButton =styled.button`
   margin-top: 13px;
 
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: 'NanumMyeongjoOTF';
+  font-family: 'NanumMyeongjo';
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
