@@ -45,7 +45,8 @@ const ImgDiv1=styled(MainDiv)`
   background-size: cover;
   background-position: center;
   width: 375px;
-  height: 700px;
+  height: 100%;
+  justify-content: end;
 `;
 
 const OpacityDiv = styled.div`
@@ -54,7 +55,7 @@ const OpacityDiv = styled.div`
   height : 250px;
   width: 100%;
   background-color: #FFFFFFAB;
-  margin-top: 450px;
+  //margin-top: 450px;
   align-items: center; // 세로 방향 가운데 정렬 
   justify-content: center; // 가로 방향 가운데 정렬 
 `;
@@ -102,7 +103,7 @@ const StartLink = styled(Link)`
 const StartButton =styled.button`
   background-color: white; // 원하는 배경색으로 변경 
   color: black; //원하는 텍스트 색상으로 변경
-  border: none;
+  border-color: lightgrey;
   border-radius: 4px;
   cursor: pointer;
   width: 328px;
@@ -139,7 +140,7 @@ function MainPage() {
           <TextDiv>
             지금까지 총 000,000명이 참여했습니다. 
           </TextDiv>
-          <StartLink to={"/select"}>
+          <StartLink to={"/name"}>
             <StartButton>
               시작하기
             </StartButton>

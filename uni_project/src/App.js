@@ -3,6 +3,7 @@ import "./App.css";
 import MainPage from "./MainPage";
 import Select from "./Select";
 import Result from "./Result";
+import Name from "./Name";
 
 function App() {
   return (
