@@ -111,7 +111,7 @@ const StartButton =styled.button`
   margin-top: 13px;
 
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: NanumMyeongjoOTF;
+  font-family: 'NanumMyeongjoOTF';
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

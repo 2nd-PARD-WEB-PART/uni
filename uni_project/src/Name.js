@@ -43,24 +43,17 @@ const ImgDiv1=styled(MainDiv)`
   background: #FFF;
   width: 375px;
   height: 100%;
+  align-items: center;
+  justify-content: center;
 `;
 
-const OpacityDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  height : 250px;
-  width: 100%;
-  background-color: #FFFFFFAB;
-  //margin-top: 450px;
-  align-items: center; // 세로 방향 가운데 정렬 
-  justify-content: center; // 가로 방향 가운데 정렬 
-`;
 
 const Title =styled.div`
   display: flex;
   flex-direction: row;
   gap: 16px;
   align-items: center;
+  margin-bottom: 46px;
 `;
 
 const TitleCover =styled.img`
@@ -74,7 +67,7 @@ const TitleDiv =styled.div`
   text-align: center;
   color: #000;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: NanumMyeongjoOTF;
+    font-family: 'NanumMyeongjoOTF';
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -85,11 +78,21 @@ const InputDiv =styled.div`
     display: flex;
     flex-direction: row;
     gap:17px;
+    align-items:center;
 `;
 
 const InputName =styled.input`
     border: none;
     outline: none;
+    color: #000;
+    width: 121px;
+
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'NanumMyeongjoOTF';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 39.869px;
 `;
 
 const StartLink = styled(Link)`
@@ -104,7 +107,6 @@ const StartButton =styled.button`
   cursor: pointer;
   width: 328px;
   height: 48px;
-  margin-top: 13px;
 
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: NanumMyeongjoOTF;
@@ -112,6 +114,7 @@ const StartButton =styled.button`
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  margin-bottom: 28px;
 
   &:hover {
     background-color: lightgray; //마우스 호버 시 배경색 변경
@@ -124,8 +127,7 @@ function Name() {
       <BgImg></BgImg>
       <BgImg2></BgImg2>
       <BgImg3></BgImg3>
-      <ImgDiv1>
-        <OpacityDiv>
+      <ImgDiv1>  
           <Title>
             <TitleDiv>
               당신의 이름은?
@@ -133,17 +135,18 @@ function Name() {
           </Title>
           <InputDiv>
             <TitleCover src="Rectangle 3.png" alt="타이틀 대괄호 왼쪽"/>
-            <input type="text" placeholder="______">
-            </input>
+            <InputName type="text" placeholder="__________">
+            </InputName>
             <TitleCover src="Rectangle 2.png" alt="타이틀 대괄호 왼쪽"/>
             </InputDiv>
+      </ImgDiv1>
+      <footer>
           <StartLink to={"/result"}>
             <StartButton>
               입력완료
             </StartButton>
           </StartLink>
-        </OpacityDiv>
-      </ImgDiv1>
+          </footer>
     </MainDiv>
   );
 }
