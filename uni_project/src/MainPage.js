@@ -121,8 +121,8 @@ const StartLink = styled(Link)`
 
 const StartButton =styled.button`
   background-color: white; // 원하는 배경색으로 변경 
-  color: black; //원하는 텍스트 색상으로 변경
-  border-color: lightgrey;
+  color:#010101;
+  border: 1px solid #B3B3B3;
   border-radius: 4px;
   cursor: pointer;
   width: 328px;
@@ -137,7 +137,7 @@ const StartButton =styled.button`
   line-height: 24px;
 
   &:hover {
-    background-color: lightgray; //마우스 호버 시 배경색 변경
+    background-color: #f0f0f0;  //마우스 호버 시 배경색 변경
   }
 `;
 
