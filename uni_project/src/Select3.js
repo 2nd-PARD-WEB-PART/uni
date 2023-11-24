@@ -19,7 +19,7 @@ const Body = styled.div`
   background-color: beige;
   width: 435px;
   height: 100vh;
-  background-image: url('/image 1.png');
+  background-image: url('/image 3-2.png');
   background-size: cover;
 `;
 
