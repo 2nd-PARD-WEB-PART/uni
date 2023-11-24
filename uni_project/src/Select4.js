@@ -161,7 +161,7 @@ export default function Select() {
           <Answer_Container>
 
             <AnswerA>
-              <Link to='/Select5'>
+              <Link to='/Select5' style={{textDecoration: "none"}}>
                 <AnswerA_detail onClick={handleAnswerAClick}>
                   <div>
                     <TextA>
@@ -173,7 +173,7 @@ export default function Select() {
             </AnswerA>
 
             <AnswerB>
-              <Link to='/Select5'>
+              <Link to='/Select5' style={{textDecoration: "none"}}>
                 <AnswerB_detail onClick={handleAnswerBClick}>
                 <div>
                   <TextB>
