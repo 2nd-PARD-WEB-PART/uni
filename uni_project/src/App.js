@@ -3,6 +3,7 @@ import "./App.css";
 import MainPage from "./MainPage";
 import Select from "./Select";
 import Result from "./Result";
+import Name from "./Name";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/name" element={<Name/>} />
+          <Route path="/name" element={<Name />} />
           <Route path="/select" element={<Select />} />
           <Route path="/result" element={<Result />} />
         </Routes>
