@@ -1,6 +1,10 @@
 # ![header](https://capsule-render.vercel.app/api?type=rounded&text=최애의교수&fontAlign=25&fontSize=60&desc=교수님%20찾기&descAlign=60&descAlignY=50&color=0:feac5e,50:c779d0,100:4bc0c8&fontColor=ffffff&animation=twinkling)
 
 <br>
+ 💻 최애의 교수는 ..
+나와 잘맞는, 잘 안맞는 한동대학교 전산전자 교수님 찾기 서비스
+최애의 교수는, 재미있는 질문들을 통해서 자신에게 가장 잘 맞는 전전 교수님을 찾아주는 서비스에요. 내 최애의 교수님을 만나보세요!
+<br>
 
 ## 💻 개발환경 및 언어
 <p>
@@ -12,3 +16,16 @@
 </p>
 
 <br>
+## 📚 이용한 React 기술 소개
+
+1. React
+* 사용자 인터페이스를 만들기 위한 JavaScript 라이브러리
+            
+2. swagger
+* API를 설계, 문서화 및 테스트하기 위한 프레임워크
+
+<br>
+
+|라이브러리 이름|기능|
+|------|-----|
+|<ul><li>useState</li><li>map</li><li>router</li><li>styled component</li><li>context</li><li>Axios</li><ul>|<ul><li>React에서 상태를 관리하는 Hook </li><li>map은 배열 요소를 순회하며 각 요소에 대한 작업을 수행하는 JavaScript 배열 메서드</li><li>React에서 가장 많이 쓰이는 (페이지 이동 기능) 라이브러리</li><li>JavaScript 파일 내에서 CSS 스타일을 정의.</li><li>React 내장 기능. props 사용하지 않아도 특정값을 컴포넌트끼리 공유.</li><li>비동기적으로 서버와 데이터를 주고 받을 수 있게 해주는 라이브러리</li></ul>|
