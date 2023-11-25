@@ -2,7 +2,7 @@ import React, {useState,useEffect} from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components"
 import axios from "axios";
-import "./Fonts/Font.css";
+import "./fonts/font.css";
 
 const MainDiv =styled.div`
   display: flex;
