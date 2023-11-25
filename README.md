@@ -1,7 +1,7 @@
 # ![header](https://capsule-render.vercel.app/api?type=rounded&text=최애의교수&fontAlign=25&fontSize=60&desc=교수님%20찾기&descAlign=60&descAlignY=50&color=0:feac5e,50:c779d0,100:4bc0c8&fontColor=ffffff&animation=twinkling)
 
 <br>
-## 💻 최애의 교수는 ..
+ 💻 최애의 교수는 ..
 나와 잘맞는, 잘 안맞는 한동대학교 전산전자 교수님 찾기 서비스
 최애의 교수는, 재미있는 질문들을 통해서 자신에게 가장 잘 맞는 전전 교수님을 찾아주는 서비스에요. 내 최애의 교수님을 만나보세요!
 <br>
