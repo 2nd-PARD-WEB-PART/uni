@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import "./fonts/font.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
