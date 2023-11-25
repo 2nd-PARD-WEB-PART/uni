@@ -382,7 +382,7 @@ function Result() {
     console.log(PhdInfo.name);
     const usercontent = {
       writer: storedItem,
-      selectedProf: maxScoreName,
+      selectedProf: "김광",
       content: content,
     };
     console.log(usercontent);
@@ -399,6 +399,7 @@ function Result() {
 
   const getComment = () => {
     async function getData() {
+      console.log(maxScoreName);
       try {
         axios
           .get(`http://172.18.157.205:8080/api/comments/${maxScoreName}`)
@@ -412,6 +413,7 @@ function Result() {
         console.log("error: " + error);
       }
     }
+    getComment();
     getData();
   };
 
@@ -455,7 +457,7 @@ function Result() {
 
           <MajorContainer>
             <MajorTitle>전공수업</MajorTitle>
-            {maxScoreName == "kwang" ? (
+            {maxScoreName == "sin" ? (
               <div>
                 <Subjects>{Subject.subject1}</Subjects>
                 <Subjects>{Subject.subject2}</Subjects>
