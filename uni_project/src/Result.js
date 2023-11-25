@@ -13,7 +13,6 @@ const ScreenContainer = styled.div`
 `;
 
 const ResultPart = styled.div`
-  /* box-sizing: border-box; */
   width: 375px;
   height: auto;
   margin: 0 auto;
