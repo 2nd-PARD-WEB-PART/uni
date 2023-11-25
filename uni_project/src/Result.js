@@ -278,17 +278,26 @@ const SubmitButton = styled.button`
   font-family: "NanumMyeongjo";
 `;
 
+const RankingContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+// const
+
 function Result() {
-  const [writer, setWriter] = useState("");
+  const [writer, setWriter] = useState();
   const [content, setContent] = useState("");
   const [selectedProf, setSelectedProf] = useState("");
   const [comments, setComments] = useState([]);
+  const [ranking, setRanking] = useState([]);
   const { MyData, setUser, PhdInfo, setPhdInfo, Subject, setSubject } =
     useContext(MyContext);
   const maxScoreName = Object.keys(MyData).reduce((a, b) =>
     MyData[a] > MyData[b] ? a : b
   );
   let subjectArray;
+  const storedItem = localStorage.getItem("name");
 
   const changeWriter = (e) => {
     setWriter(e.target.value);
@@ -320,7 +329,23 @@ function Result() {
     }
     getData();
 
-    if (maxScoreName == "gwang") {
+    async function getDataRank() {
+      try {
+        await axios
+          .get(`http://172.18.157.205:8080/api/rankings`)
+          .then((response) => {
+            //서버측 데이터 보면 실제 데이터는 response.data.data에 저장되어 있음.
+            console.log("response: ", response.data);
+            //데이터 업데이트.
+            setRanking(response.data);
+          });
+      } catch (error) {
+        console.log("error: " + error);
+      }
+    }
+    getDataRank();
+
+    if (maxScoreName == "kwang") {
       setPhdInfo({
         name: "김광",
         major: "전자계산학 Ph.D",
@@ -355,9 +380,10 @@ function Result() {
   }, []); //한번만 수행
 
   const Userupload = () => {
+    console.log(PhdInfo.name);
     const usercontent = {
-      writer: writer,
-      selectedProf: PhdInfo.name,
+      writer: storedItem,
+      selectedProf: maxScoreName,
       content: content,
     };
     console.log(usercontent);
@@ -396,7 +422,12 @@ function Result() {
       <ResultPart>
         <ResultContainer>
           <ImgContainer>
-            <ResultImg src={process.env.PUBLIC_URL + "/image 1.png"} />
+            {maxScoreName == "kwang" ? (
+              <ResultImg src={process.env.PUBLIC_URL + "/kwang.png"} />
+            ) : (
+              <ResultImg src={process.env.PUBLIC_URL + "/yong.png"} />
+            )}
+
             <WordPart>"너, 우리 랩실에 들어오지 않을래?"</WordPart>
           </ImgContainer>
           <ProfInfoBox>
@@ -425,7 +456,7 @@ function Result() {
 
           <MajorContainer>
             <MajorTitle>전공수업</MajorTitle>
-            {maxScoreName == "gwang" ? (
+            {maxScoreName == "kwang" ? (
               <div>
                 <Subjects>{Subject.subject1}</Subjects>
                 <Subjects>{Subject.subject2}</Subjects>
