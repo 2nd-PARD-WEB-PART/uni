@@ -30,30 +30,33 @@ function App() {
     jc: 0, //남재창
     sin: 0, //홍신
   });
-  
-  const [PhdInfo, setPhdInfo] =useState({
-    major: '',
-    lab: '',
-    call: '',
-    email: '',
+
+  const [PhdInfo, setPhdInfo] = useState({
+    name: "",
+    major: "",
+    lab: "",
+    call: "",
+    email: "",
   });
 
   const [Subject, setSubject] = useState({
-    subject1: '',
-    subject2: '',
-    subject3: '',
-    subject4: '',
-    subject5: '',
-    subject6: '',
-  })
-  
+    subject1: "",
+    subject2: "",
+    subject3: "",
+    subject4: "",
+    subject5: "",
+    subject6: "",
+  });
+
   return (
     <div>
-      <MyContext.Provider value={{MyData,setUser,PhdInfo,setPhdInfo,Subject,setSubject}}>
+      <MyContext.Provider
+        value={{ MyData, setUser, PhdInfo, setPhdInfo, Subject, setSubject }}
+      >
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/name" element={<Name/>} />
+            <Route path="/name" element={<Name />} />
             <Route path="/select" element={<Select />} />
             <Route path="/select2" element={<Select2 />} />
             <Route path="/select3" element={<Select3 />} />
@@ -65,7 +68,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </MyContext.Provider>
-      
     </div>
   );
 }

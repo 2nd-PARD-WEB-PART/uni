@@ -14,7 +14,7 @@ const ScreenContainer = styled.div`
 const ResultPart = styled.div`
   /* box-sizing: border-box; */
   width: 375px;
-  height: 100%;
+  height: auto;
   margin: 0 auto;
   display: flex;
 `;
@@ -24,6 +24,7 @@ const ResultContainer = styled.div`
   width: 375px;
   height: 916px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   margin: 0 auto;
   margin-top: 24px;
@@ -182,20 +183,112 @@ const TextOnBorder = styled.span`
   padding: 0 5px; /* 텍스트 주변의 여백을 조정할 수 있습니다. */
 `;
 
+const ProfNameContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+`;
+
+const ProfName = styled.div`
+  color: #ff79f2;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "NanumMyeongjo";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 39.869px;
+`;
+
+const ProfInfoBox = styled.div`
+  margin: 0 auto;
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const ProfInfo = styled.div`
+  width: auto;
+  color: #010101;
+
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "NanumMyeongjo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+`;
+
+const MajorContainer = styled.div`
+  box-sizing: border-box;
+  text-align: center;
+  width: 287px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 36px;
+  margin-bottom: 36px;
+`;
+const MajorTitle = styled.div`
+  width: 287px;
+  color: #010101;
+
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "NanumMyeongjo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+`;
+
+const Subjects = styled.div`
+  color: #010101;
+
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "NanumMyeongjo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+`;
+
+const SubmitContainer = styled.div`
+  width: 328px;
+  display: flex;
+  flex-direction: row;
+`;
+const CommentInput = styled.input`
+  box-sizing: border-box;
+  width: 280px;
+  height: 48px;
+  display: flex;
+  padding: 12px 16px;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
+  margin-top: 26px;
+`;
+
+const SubmitButton = styled.button`
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  margin-top: 26px;
+  font-family: "NanumMyeongjo";
+`;
+
 function Result() {
   const [writer, setWriter] = useState("");
   const [content, setContent] = useState("");
   const [selectedProf, setSelectedProf] = useState("");
-  const [ismore, setIsMore] = useState(false);
   const [comments, setComments] = useState([]);
-  const { MyData, setUser } = useContext(MyContext);
+  const { MyData, setUser, PhdInfo, setPhdInfo, Subject, setSubject } =
+    useContext(MyContext);
   const maxScoreName = Object.keys(MyData).reduce((a, b) =>
     MyData[a] > MyData[b] ? a : b
   );
-
-  const changeIsMore = (e) => {
-    setIsMore(!ismore);
-  };
+  let subjectArray;
 
   const changeWriter = (e) => {
     setWriter(e.target.value);
@@ -226,12 +319,45 @@ function Result() {
       }
     }
     getData();
+
+    if (maxScoreName == "gwang") {
+      setPhdInfo({
+        name: "김광",
+        major: "전자계산학 Ph.D",
+        lab: "뉴턴홀 204호",
+        call: "054-260-1307",
+        email: "wyong@handong.edu",
+      });
+      setSubject({
+        subject1: "코딩 스튜디오 (1학점)",
+        subject2: "실전프로젝트 (3학점)",
+        subject3: "직업과 진로설계 (1학점)",
+        subject4: "창조와 진화 (2학점)",
+        subject5: "캡스톤디자인 (4학점)",
+        subject6: "프로그래밍 (3학점)",
+      });
+    } else if (maxScoreName == "yong") {
+      setPhdInfo({
+        name: "용환기",
+        major: "컴퓨터공학 Ph.D.",
+        lab: "오석관 315호",
+        call: "054-260-1864",
+        email: "sshwang@handong.edu",
+      });
+      setSubject({
+        subject1: "데이터구조 (3학점)",
+        subject2: "컴퓨터구조 (3학점)",
+        subject3: "알고리듬 (3학점)",
+      });
+      subjectArray = Object.entries(Subject);
+      console.log(subjectArray);
+    }
   }, []); //한번만 수행
 
   const Userupload = () => {
     const usercontent = {
       writer: writer,
-      selectedProf: selectedProf,
+      selectedProf: PhdInfo.name,
       content: content,
     };
     console.log(usercontent);
@@ -273,6 +399,49 @@ function Result() {
             <ResultImg src={process.env.PUBLIC_URL + "/image 1.png"} />
             <WordPart>"너, 우리 랩실에 들어오지 않을래?"</WordPart>
           </ImgContainer>
+          <ProfInfoBox>
+            <ProfNameContainer>
+              <ProfName>[</ProfName>
+              <ProfName>{PhdInfo.name}</ProfName>
+              <ProfName>교수님]</ProfName>
+            </ProfNameContainer>
+            <ProfNameContainer>
+              <ProfInfo>전공:</ProfInfo>
+              <ProfInfo>{PhdInfo.major}</ProfInfo>
+            </ProfNameContainer>
+            <ProfNameContainer>
+              <ProfInfo>연구실:</ProfInfo>
+              <ProfInfo>{PhdInfo.lab}</ProfInfo>
+            </ProfNameContainer>
+            <ProfNameContainer>
+              <ProfInfo>전화:</ProfInfo>
+              <ProfInfo>{PhdInfo.call}</ProfInfo>
+            </ProfNameContainer>
+            <ProfNameContainer>
+              <ProfInfo>E-mail:</ProfInfo>
+              <ProfInfo>{PhdInfo.email}</ProfInfo>
+            </ProfNameContainer>
+          </ProfInfoBox>
+
+          <MajorContainer>
+            <MajorTitle>전공수업</MajorTitle>
+            {maxScoreName == "gwang" ? (
+              <div>
+                <Subjects>{Subject.subject1}</Subjects>
+                <Subjects>{Subject.subject2}</Subjects>
+                <Subjects>{Subject.subject3}</Subjects>
+                <Subjects>{Subject.subject4}</Subjects>
+                <Subjects>{Subject.subject5}</Subjects>
+                <Subjects>{Subject.subject6}</Subjects>
+              </div>
+            ) : (
+              <div>
+                <Subjects>{Subject.subject1}</Subjects>
+                <Subjects>{Subject.subject2}</Subjects>
+                <Subjects>{Subject.subject3}</Subjects>
+              </div>
+            )}
+          </MajorContainer>
         </ResultContainer>
       </ResultPart>
       <ProfComment>
@@ -284,15 +453,19 @@ function Result() {
               <CommentContainer>{iter.content}</CommentContainer>
             </div>
           ))}
+          <SubmitContainer>
+            <CommentInput
+              type="text"
+              value={content}
+              onChange={changeContent}
+            ></CommentInput>
+            <SubmitButton onClick={Userupload}>제출</SubmitButton>
+          </SubmitContainer>
         </ProfCommentTitle>
       </ProfComment>
       <CommentOtherProf>
         <ProfCommentTitle>전체 순위</ProfCommentTitle>
       </CommentOtherProf>
-      <input type="text" value={writer} onChange={changeWriter}></input>
-      <input type="text" value={content} onChange={changeContent}></input>
-      <input type="text" value={selectedProf} onChange={changeProf}></input>
-      <button onClick={Userupload}>제출</button>
     </ScreenContainer>
   );
 }
