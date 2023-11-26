@@ -1,7 +1,8 @@
 # ![header](https://capsule-render.vercel.app/api?type=rounded&text=최애의교수&fontAlign=25&fontSize=60&desc=교수님%20찾기&descAlign=60&descAlignY=50&color=0:feac5e,50:c779d0,100:4bc0c8&fontColor=ffffff&animation=twinkling)
 
 <br>
-해당 프로젝트는 2023년 PARD 2기 숏커톤에서 만들어진 프로젝트로 'Connect'라는 주제에 기초하여 만들어졌습니다. 
+☝🏻 해당 프로젝트는 2023년 PARD 2기 숏커톤에서 만들어진 프로젝트로 'Connect'라는 주제에 기초하여 만들어졌습니다. 
+<br>
 <br>
  💻 최애의 교수는 .. 
 나와 잘맞는, 잘 안맞는 한동대학교 전산전자 교수님 찾기 서비스
