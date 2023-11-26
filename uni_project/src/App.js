@@ -22,7 +22,7 @@ function App() {
     yong: 0, //용환기
     jang: 0, //장소연
     jung: 0, //김인중
-    gwang: 0, //김광
+    kwang: 0, //김광
     hong: 0, //홍참길
     seob: 0, //김영섭
     ho: 0, //김호준
